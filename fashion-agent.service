@@ -1,0 +1,17 @@
+[Unit]
+Description=Fashion Agent
+After=network.target
+
+[Service]
+Type=simple
+# 修改为你的实际路径和用户名
+WorkingDirectory=/your/path/to/Fashion Agent/backend
+ExecStart=/usr/bin/python3 main.py
+Restart=on-failure
+RestartSec=5
+# 修改为你的实际用户名
+User=ubuntu
+EnvironmentFile=/your/path/to/Fashion Agent/backend/.env
+
+[Install]
+WantedBy=multi-user.target
